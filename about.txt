@@ -1,0 +1,7 @@
+Casanova
+===========================
+
+Created by Thomas Müntzer
+
+Requires calibre >= 0.7.53
+
