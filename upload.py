@@ -3,7 +3,7 @@
 from __future__ import (unicode_literals, division, absolute_import, print_function)
 
 __license__ = 'GPL 3'
-__copyright__ = '2012, Thomas Müntzer <thomas.muntzer@gmail.com>'
+__copyright__ = '2014, Alex Kosloff <pisatel1976@gmail.com>'
 __docformat__ = 'restructuredtext en'
 
 import os
@@ -61,7 +61,7 @@ class CasanovaAdder(object):
 			return True
 		return False
 
-	def _post(self, values, path='/a/u'):
+	def _post(self, values, path='/api/do'):
 		''' Posts something to the casanova listener url '''
 		self.base_url = prefs['base_url']
 		url = url_slash_cleaner(self.base_url + path)

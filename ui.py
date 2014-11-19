@@ -4,7 +4,7 @@ from __future__ import (unicode_literals, division, absolute_import,
                         print_function)
 
 __license__ = 'GPL 3'
-__copyright__ = '2012, Thomas Müntzer <thomas.muntzer@gmail.com>'
+__copyright__ = '2014, Alex Kosloff <pisatel1976@gmail.com>'
 __docformat__ = 'restructuredtext en'
 
 from functools import partial

@@ -4,7 +4,7 @@ from __future__ import (unicode_literals, division, absolute_import,
                         print_function)
 
 __license__ = 'GPL 3'
-__copyright__ = '2012, Thomas Müntzer <thomas.muntzer@gmail.com>'
+__copyright__ = '2014, Alex Kosloff <pisatel1976@gmail.com>'
 __docformat__ = 'restructuredtext en'
 
 
@@ -24,8 +24,8 @@ class CasanovaPlugin(InterfaceActionBase):
     name                = 'Casanova Plugin'
     description         = 'A plugin to interact with Casanova metadata servers'
     supported_platforms = ['windows', 'osx', 'linux']
-    author              = 'Thomas Müntzer'
-    version             = (1, 0, 1)
+    author              = 'Alex Kosloff'
+    version             = (2, 0, 0)
     minimum_calibre_version = (0, 7, 53)
 
     #: This field defines the GUI plugin class that contains all the code

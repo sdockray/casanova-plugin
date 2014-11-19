@@ -1,7 +1,8 @@
 Casanova
 ===========================
 
-Created by Thomas Müntzer
+Created by Thomas Müntzer,
+Updated by Alex Kosloff
 
 Requires calibre >= 0.7.53
 

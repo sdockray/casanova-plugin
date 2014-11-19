@@ -3,7 +3,7 @@
 from __future__ import (unicode_literals, division, absolute_import, print_function)
 
 __license__ = 'GPL 3'
-__copyright__ = '2012, Thomas Müntzer <thomas.muntzer@gmail.com>'
+__copyright__ = '2014, Alex Kosloff <pisatel1976@gmail.com>'
 __docformat__ = 'restructuredtext en'
 
 import os
@@ -109,7 +109,7 @@ class CasanovaMetadataManager(object):
 		else:
 			return 'Something went wrong :('
 
-	def _post(self, values, path='/a/u'):
+	def _post(self, values, path='/api/do'):
 		''' Posts something to the casanova listener url '''
 		prefs.refresh()
 		self.base_url = prefs['base_url']
@@ -232,13 +232,13 @@ class CasanovaMetadataManager(object):
 	def get_remote_issues(self):
 		''' Gets a list of remote issues - the Casanova server itself will decide how to implement this '''
 		values = {'cmd' : 'get_issues' }
-		response = self._post(values)
+		response = self._post(values)		
 		try:
 			doc = json.load(response)
 			ret_dict = {}
-			for data in doc:
-				k = data['id'].strip()
-				v = data['name'].strip()
+			for id, data in doc.iteritems():
+				k = str(id)
+				v = str(data['name'])
 				ret_dict[k] = v
 			return ret_dict
 		except:
@@ -277,12 +277,12 @@ class CasanovaMetadataManager(object):
 						downloaded[issue_id] = issue_name
 		if include_external:
 			ei = self.get_remote_issues()
-			for k in ei:
-				if ei[k] is not None:
+			for k, v in ei.iteritems():
+				if v is not None:
 					if not k in ids:
 						#ids[k] = ei[k]
 						if k not in synced and k not in downloaded:
-							followed[k] = ei[k]
+							followed[k] = v
 		sorted_ids = sorted(synced, key=synced.__getitem__)
 		if len(sorted_ids)>0:
 			ids.append((0, '** issues that you have updated **'))
